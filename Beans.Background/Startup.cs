@@ -17,7 +17,7 @@ public class Startup : FunctionsStartup
         var path = fileinfo.Directory.Parent.FullName;
         var config = new ConfigurationBuilder()
             .SetBasePath(path)
-            .AddJsonFile("local.settings.json", optional: false, reloadOnChange: true)
+            .AddJsonFile("local.settings.json", optional: true, reloadOnChange: true)
             .AddEnvironmentVariables()
             .Build();
         builder.Services.AddSingleton<IConfiguration>(config);
